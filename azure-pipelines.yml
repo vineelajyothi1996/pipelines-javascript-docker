@@ -49,12 +49,9 @@ stages:
         containers: $(containerRegistry)/$(imageRepository):$(tag)
         deployToSlotOrASE: true
         resourceGroupName: 'RG1'
-        slotName: staging
-
     - task: AzureAppServiceManage@0
       inputs:
         azureSubscription: $(azureSubscription)
         WebappName: $(appName)
         ResourceGroupName: $(ResourceGroupName)
-        SourceSlot: staging
         SwapWithProduction: true
