@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   azureSubscription: 'Azure for Students(bf07bb37-fbf0-46b1-b200-96da2a044d27)'
-  appName: 'docker-webapp.azurewebsites.net'
+  appName: 'docker-webapp'
   dockerRegistryServiceConnection: '397f1219-3bbe-4b4a-a8bb-c46d67755f7e'
   imageRepository: 'vineelajyothipipelinesjavascriptdocker'
   containerRegistry: 'vineelaregistryforcintainers.azurecr.io'
@@ -47,3 +47,4 @@ stages:
         azureSubscription: $(azureSubscription)
         appName: $(appName)
         containers: $(containerRegistry)/$(imageRepository):$(tag)
+        appSettings: 
