@@ -42,12 +42,11 @@ stages:
         containers: $(containerRegistry)/$(imageRepository):$(tag)
         deployToSlotOrASE: true
         ResourceGroupName: $(ResourceGroupName)
-        SlotName: 'staging'  # Deploying to a staging slot
+        
 
     - task: AzureAppServiceManage@0
       inputs:
         azureSubscription: $(azureSubscription)
         WebappName: $(appName)
         ResourceGroupName: $(ResourceGroupName)
-        SourceSlot: 'staging'  # Source slot for swap
         TargetSlot: 'production'  # Target slot for swap
