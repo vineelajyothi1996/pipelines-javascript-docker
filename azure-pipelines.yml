@@ -48,7 +48,7 @@ stages:
         appName: $(appName)
         containers: $(containerRegistry)/$(imageRepository):$(tag)
         deployToSlotOrASE: true
-        resourceGroupName: 'RG1'
+        ResourceGroupName: 'RG1'
     - task: AzureAppServiceManage@0
       inputs:
         azureSubscription: $(azureSubscription)
